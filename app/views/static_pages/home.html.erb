@@ -13,11 +13,11 @@
 
 <ul class="list-group">
    <% @debates.each do |debate|%>
-   <a href="<%= debates_show_path(debate)%>">
+
     <li class="list-group-item">
     <span class="badge"><%= debate.users.count %></span>
+      <%= link_to "GO", debate %>
     <%= debate.title %>
     </li>
     <% end  %>
-   </a>
 </ul>

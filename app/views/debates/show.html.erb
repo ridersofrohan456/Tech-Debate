@@ -1,24 +1,43 @@
-<h1>Debates#show</h1>
-<p>Find me in app/views/debates/show.html.erb</p>
-
-
-
+<div class="container">
+  <!-- Main component for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <h1><%= @debate.title %></h1>
+    <p><%= @debate.description %></p>
+    <h3>Winner: <%= @debate.winner %></h3>
+  </div>
+</div>
 <div class="container">
   <!-- Example row of columns -->
   <div class="row">
-    <div class="col-md-4">
-      <h2>Heading</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+    <div class="col-md-6">
+      <% @debate.comments.where(side: 1).each do |comment| %>
+        <h2><%= comment.authored_by %></h2>
+        <p> <%= comment.description %> </p>
+      <% end %>
+      <%= form_for(Comment.new, class: 'form-group') do |f| %>
+        <%= f.text_field :authored_by, class:"form-control input-lg form-group", placeholder: "Name"  %>
+        <%= f.text_area  :description, class:"form-control input-lg form-group", placeholder: "Description"  %>
+        <%= f.hidden_field :debate_id, value: @debate.id %>
+        <%= f.hidden_field :side, value: 1 %>
+        <div class="form-group">
+          <%= f.submit "Submit link", class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+      <% end %>
     </div>
-    <div class="col-md-4">
-      <h2>Heading</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-      <h2>Heading</h2>
-      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+    <div class="col-md-6">
+      <% @debate.comments.where(side: 2).each do |comment| %>
+        <h2><%= comment.authored_by %></h2>
+        <p> <%= comment.description %> </p>
+      <% end %>
+      <%= form_for(Comment.new, class: 'form-group') do |f| %>
+        <%= f.text_field :authored_by, class:"form-control input-lg form-group", placeholder: "Name"  %>
+        <%= f.text_area  :description, class:"form-control input-lg form-group", placeholder: "Description"  %>
+        <%= f.hidden_field :debate_id, value: @debate.id %>
+        <%= f.hidden_field :side, value: 2 %>
+        <div class="form-group">
+          <%= f.submit "Submit link", class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+      <% end %>
     </div>
   </div>
+</div>

@@ -13,11 +13,10 @@ Rails.application.routes.draw do
   get 'users/show'
 
   devise_for :users
-  resources :users
-  resources :debates
+
+  resources :users, :debates, :comments
+
   root 'static_pages#home'
-
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

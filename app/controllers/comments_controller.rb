@@ -6,5 +6,23 @@ class CommentsController < ApplicationController
   end
 
   def new
+
+  end
+
+  def create
+    puts "AAAA\n" * 10
+    comment = Comment.new(comment_params)
+    if comment.save
+      flash[:success] = "Thanks for contributing!"
+    else
+      flash[:danger] = comment.errors.messages
+    end
+    redirect_to :back # Go back to page regardless
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:authored_by, :description, :debate_id, :side)
   end
 end
