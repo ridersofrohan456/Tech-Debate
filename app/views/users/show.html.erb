@@ -19,15 +19,12 @@
       </div>
       <div class="panel-body">
         <%= gravatar_for(@user) %>
-
         <h1>Name:</h1>
         <%= @user.name %>
-        <h1>About</h1>
+        <h1>About:</h1>
         <%= @user.about %>
-
-
+        <h1>Social:</h1>
         <%= social_share_button_tag("My Site") %>
-
       </div>
     </div>
   </div>

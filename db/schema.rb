@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004030303) do
+ActiveRecord::Schema.define(version: 20141004191724) do
+
+  create_table "debates", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "winner"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "debates_users", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "debate_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -28,6 +43,7 @@ ActiveRecord::Schema.define(version: 20141004030303) do
     t.datetime "updated_at"
     t.string   "name"
     t.text     "about"
+    t.integer  "debate_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
