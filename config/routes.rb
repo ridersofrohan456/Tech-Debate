@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'users/show'
 
   devise_for :users
+  resources :users
   root 'static_pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
