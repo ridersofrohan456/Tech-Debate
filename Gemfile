@@ -38,3 +38,27 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  gem 'guard-rspec'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'factory_girl_rails', '4.2.0'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'annotate'
+end
+
+
+
+gem 'devise'
+
+
+
