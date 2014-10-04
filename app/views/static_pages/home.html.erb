@@ -1,23 +1,59 @@
-<div class="container">
-  <!-- Main component for a primary marketing message or call to action -->
-  <div class="jumbotron">
-    <h1><%= @current_debate.title %></h1>
-    <p><%= @current_debate.description %></p>
-    <h3>Winner: <%= @current_debate.winner %></h3>
-    <p>
-      <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-    </p>
+
+
+<div id="colordiv">
+
+  <div id="whatwedo" class="row">
+    <h1 class="text-center customheader">Debate Of The Month</h1>
+
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h4 class="text-center">Debate Topic of the Month</h4>
+        </div>
+        <div style="margin: 61px;">
+          <h3 class="text-center">Apple</h3>
+          <img src='http://t2.gstatic.com/images?q=tbn:ANd9GcT8HOctyI-laD1q6s9bQvTvfippQYd_9CDfdeUCa4xcq9pgrduJ' style="width:200px">
+          <h2 class="text-center">VS</h2>
+          <h2 class="text-center">Android</h2>
+          <img src='http://nerdynerdnerdz.com/wp-content/uploads/2014/07/Android-att-apn-mms.jpg'
+               style="width:300px">
+        </div>
+        <div class="panel-footer text-center">
+          <span class="fa fa-crosshairs bigicon"></span>
+        </div>
+      </div>
+    </div>
+    <div class="section" style="color:white">
+      <div class="col-md-8 col-lg-8">
+        <div class="transbox">
+          <div class="panel-heading">
+            <h3 class="text-center">About Apple</h3>
+          </div>
+          <div style="margin: 30px;">
+            Apple Inc. is an American multinational corporation headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, computer software, online services, and personal computers. Its best-known hardware products are the Mac line of computers, the iPod media player, the iPhone smartphone, and the iPad tablet computer. Its online services include iCloud, iTunes Store, and App Store. Apple's consumer software includes the OS X and iOS operating systems, the iTunes media browser, the Safari web browser, and the iLife and iWork creativity and productivity suites.
+            <br>
+            <br>
+            Apple was founded by Steve Jobs, Steve Wozniak, and Ronald Wayne on April 1, 1976, to develop and sell personal computers. It was incorporated as Apple Computer, Inc. on January 3, 1977, and was renamed as Apple Inc. on January 9, 2007, to reflect its shifted focus towards consumer electronics.
+            <br>
+            <br>
+            Apple is the world's second-largest information technology company by revenue after Samsung Electronics, and the world's third-largest mobile phone maker after Samsung and Nokia. Fortune magazine named Apple the most admired company in the United States in 2008, and in the world from 2008 to 2012. On September 30, 2013, Apple surpassed Coca-Cola to become the world's most valuable brand in the Omnicom Group's "Best Global Brands" report. However, the company has received criticism for its contractors' labor practices, as well as for its own environmental and business practices.
+          </div>
+        </div>
+         <div class="transbox">
+              <div class="panel-heading">
+                <h4 class="text-center">About Android</h4>
+              </div>
+              <div style="margin: 30px;">
+                Android is a mobile operating system (OS) based on the Linux kernel and currently developed by Google. With a user interface based on direct manipulation, Android is designed primarily for touchscreen mobile devices such as smartphones and tablet computers, with specialized user interfaces for televisions (Android TV), cars (Android Auto), and wrist watches (Android Wear). The OS uses touch inputs that loosely correspond to real-world actions, like swiping, tapping, pinching, and reverse pinching to manipulate on-screen objects, and a virtual keyboard. Despite being primarily designed for touchscreen input, it also has been used in game consoles, digital cameras, and other electronics.
+                <br>
+                <br>
+                Android is the most popular mobile OS. As of 2013, Android devices sell more than Windows, iOS, and Mac OS devices combined, with sales in 2012, 2013 and 2014 close to the installed base of all PCs. As of July 2013 the Google Play store has had over 1 million Android apps published, and over 50 billion apps downloaded.[20] A developer survey conducted in April–May 2013 found that 71% of mobile developers develop for Android.At Google I/O 2014, the company revealed that there were over 1 billion active monthly Android users (that have been active for 30 days), up from 538 million in June 2013.
+                <br>
+                <br>
+                Android's source code is released by Google under open source licenses, although most Android devices ultimately ship with a combination of open source and proprietary software. Initially developed by Android, Inc., which Google backed financially and later bought in 2005, Android was unveiled in 2007 along with the founding of the Open Handset Alliance—​a consortium of hardware, software, and telecommunication companies devoted to advancing open standards for mobile devices.
+              </div>
+            </div>
+      </div>
+    </div>
   </div>
-</div> <!-- /container -->
-
-
-<ul class="list-group">
-   <% @debates.each do |debate|%>
-
-    <li class="list-group-item">
-    <span class="badge"><%= debate.users.count %></span>
-      <%= link_to "GO", debate %>
-    <%= debate.title %>
-    </li>
-    <% end  %>
-</ul>
+</div>
