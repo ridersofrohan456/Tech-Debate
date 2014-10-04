@@ -7,9 +7,8 @@
         <h3 class="panel-title"><i class="fa fa-magnet"></i> Control Panel</h3>
       </div>
       <div class="panel-body">
-        <%= link_to "Change your password", edit_user_registration_path, class: 'btn btn-md btn-hover btn-primary' %>
-
-        <%= link_to "Change your information", edit_user_path(@user), class: 'btn btn-md btn-hover btn-primary'%>
+        <%= link_to "Change your password", edit_user_registration_path, class: 'btn btn-md  btn-primary' %>
+        <%= link_to "Change your information", edit_user_path(@user), class: 'btn btn-md btn-primary'%>
       </div>
     </div>
   </div>
@@ -21,18 +20,20 @@
       <div class="panel-body">
         <%= gravatar_for(@user) %>
 
-
         <h1>Name:</h1>
         <%= @user.name %>
         <h1>About</h1>
         <%= @user.about %>
 
 
+        <%= social_share_button_tag("My Site") %>
 
       </div>
     </div>
   </div>
 </div>
+
+
 
 <style>
   .btn-hover {

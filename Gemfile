@@ -63,7 +63,7 @@ end
 
 gem 'devise'
 gem 'bootstrap-sass' # for using bootstrap
-
+gem 'social-share-button', '~> 0.1.6'
 
 
 # For heroku
