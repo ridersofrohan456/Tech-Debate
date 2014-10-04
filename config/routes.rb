@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'comments/edit'
+
+  get 'comments/update'
+
+  get 'comments/new'
+
   get 'debates/index'
 
   get 'debates/show'
