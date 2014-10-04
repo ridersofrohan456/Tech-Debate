@@ -1,11 +1,23 @@
 <div class="container">
   <!-- Main component for a primary marketing message or call to action -->
   <div class="jumbotron">
-    <h1>Navbar example</h1>
-    <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-    <p>To see the difference between static and fixed top navbars, just scroll.</p>
+    <h1><%= @current_debate.title %></h1>
+    <p><%= @current_debate.description %></p>
+    <h3>Winner: <%= @current_debate.winner %></h3>
     <p>
       <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
     </p>
   </div>
 </div> <!-- /container -->
+
+
+<ul class="list-group">
+   <% @debates.each do |debate|%>
+   <a href="<%= debates_show_path(debate)%>">
+    <li class="list-group-item">
+    <span class="badge"><%= debate.users.count %></span>
+    <%= debate.title %>
+    </li>
+    <% end  %>
+   </a>
+</ul>

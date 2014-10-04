@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'debates/index'
+
+  get 'debates/show'
+
   get 'users/show'
 
   devise_for :users
   resources :users
+  resources :debates
   root 'static_pages#home'
 
 

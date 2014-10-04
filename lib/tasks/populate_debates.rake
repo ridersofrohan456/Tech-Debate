@@ -3,10 +3,10 @@ namespace :db do
   task populate_debates: :environment do
     [User, Debate].map(&:destroy_all)
     10.times do
-      d = Debate.create!(
+      Debate.create!(
         title:       Faker::Company.name,
         description: Faker::Lorem.paragraph(3),
-        winner:      Faker::Company.name,
+        winner:      Faker::Name.name,
         users:       User.all
       )
       User.create!(
