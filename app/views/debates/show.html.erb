@@ -10,10 +10,7 @@
   <!-- Example row of columns -->
   <div class="row">
     <div class="col-md-6">
-      <% @debate.comments.where(side: 1).each do |comment| %>
-        <h2><%= comment.authored_by %></h2>
-        <p> <%= comment.description %> </p>
-      <% end %>
+      <h1>Submit a comment</h1>
       <%= form_for(Comment.new, class: 'form-group') do |f| %>
         <%= f.text_field :authored_by, class:"form-control input-lg form-group", placeholder: "Name"  %>
         <%= f.text_area  :description, class:"form-control input-lg form-group", placeholder: "Description"  %>
@@ -23,12 +20,13 @@
           <%= f.submit "Submit link", class: "btn btn-primary btn-lg btn-block" %>
         </div>
       <% end %>
-    </div>
-    <div class="col-md-6">
-      <% @debate.comments.where(side: 2).each do |comment| %>
+      <% @debate.comments.where(side: 1).each do |comment| %>
         <h2><%= comment.authored_by %></h2>
         <p> <%= comment.description %> </p>
       <% end %>
+    </div>
+    <div class="col-md-6">
+      <h1>Submit a comment</h1>
       <%= form_for(Comment.new, class: 'form-group') do |f| %>
         <%= f.text_field :authored_by, class:"form-control input-lg form-group", placeholder: "Name"  %>
         <%= f.text_area  :description, class:"form-control input-lg form-group", placeholder: "Description"  %>
@@ -38,6 +36,11 @@
           <%= f.submit "Submit link", class: "btn btn-primary btn-lg btn-block" %>
         </div>
       <% end %>
+      <% @debate.comments.where(side: 2).each do |comment| %>
+        <h2><%= comment.authored_by %></h2>
+        <p> <%= comment.description %> </p>
+      <% end %>
+
     </div>
   </div>
 </div>

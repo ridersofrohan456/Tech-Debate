@@ -10,7 +10,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    puts "AAAA\n" * 10
     comment = Comment.new(comment_params)
     if comment.save
       flash[:success] = "Thanks for contributing!"
