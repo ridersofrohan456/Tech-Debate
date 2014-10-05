@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
        <% if user_signed_in? %>
-          <li><%= link_to "Live Debate!", nil %> </li>
+          <li><%= link_to "Live Debate!", static_pages_live_debate_path %> </li>
           <li><%= link_to "Job Offers", nil %> </li>
           <li> <a href="<%= debates_path %>">Past debates</a> </li>
           <li><%= link_to "Profile", current_user %> </li>

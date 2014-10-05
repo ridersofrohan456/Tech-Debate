@@ -26,7 +26,7 @@ namespace :db do
         side:          rand(2) + 1  # random on each side
       )
       User.create!(
-        name:     "aj",
+        name:     Faker::Name.name,
         email:    Faker::Internet.email,
         password: "user1234",
         debates:  Debate.all
