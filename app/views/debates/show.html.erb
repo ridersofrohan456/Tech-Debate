@@ -2,7 +2,7 @@
   <!-- Main component for a primary marketing message or call to action -->
   <div class="jumbotron">
     <h1><%= @debate.title %></h1>
-    <p><%= @debate.description %></p>
+    <!--<p><%= @debate.description %></p>-->
     <h3>Winner: <%= @debate.winner %></h3>
   </div>
 </div>
@@ -10,6 +10,7 @@
   <!-- Example row of columns -->
   <div class="row">
     <div class="col-md-6">
+      <h1>Apple </h1>
       <h1>Submit a comment</h1>
       <%= form_for(Comment.new, class: 'form-group') do |f| %>
         <%= f.text_field :authored_by, class:"form-control input-lg form-group", placeholder: "Name"  %>
@@ -26,6 +27,7 @@
       <% end %>
     </div>
     <div class="col-md-6">
+      <h1>Android</h1>
       <h1>Submit a comment</h1>
       <%= form_for(Comment.new, class: 'form-group') do |f| %>
         <%= f.text_field :authored_by, class:"form-control input-lg form-group", placeholder: "Name"  %>

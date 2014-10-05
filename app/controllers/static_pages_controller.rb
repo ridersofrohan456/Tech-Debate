@@ -6,5 +6,6 @@ class StaticPagesController < ApplicationController
 
   def live_debate
     @random_user = User.all.sample
+    @random_debate = Debate.all.sample
   end
 end

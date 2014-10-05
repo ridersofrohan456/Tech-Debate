@@ -23,6 +23,12 @@
         <%= @user.name %>
         <h1>About:</h1>
         <%= @user.about %>
+        <h1>Debates Participated in:</h1>
+        <ul>
+        <% @user.debates.each do |debate| %>
+         <li><%= debate.title %></li>
+        <% end %>
+        </ul>
         <h1>Social:</h1>
         <%= social_share_button_tag("My Site") %>
       </div>
