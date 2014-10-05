@@ -1,17 +1,60 @@
-<h2>Log in</h2>
+
+<div class="container">
+<br>
+<br>
+<br>
+<br>
+<h2 style="color:white">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+  <div style="color:white" id="emailfont"><%= f.label :email %></div><br />
+  <div id="emailbox"><%= f.email_field :email, autofocus: true %></div>
+
+  <div style="color:white" id="passwordfont"><%= f.label :password %></div><br />
+  <div id="passwordbox"> <%= f.password_field :password, autocomplete: "off" %></div>
 
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <div style="color:white"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
   <% end -%>
 
-  <div><%= f.submit "Log in" %></div>
+  <div><%= f.submit "Log in", class: "btn btn-primary " %></div>
 <% end %>
 
+</div>
 <%= render "devise/shared/links" %>
+
+<style>
+  body{
+    background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTVSwY7P2FNTQpaYXNt8Zde7ch3A5FJXPKOFIf6LEJzmYCJq0eg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+  }
+  h2{
+    font-size: 60px;
+    font-weight: 800;
+    text-shadow: black 0.1em 0.1em 0.2em;
+  }
+  #emailfont{
+    font-style:oblique;
+    font-size:30px;
+    line-height: 80px;
+    text-shadow: black 0.1em 0.1em 0.2em;
+  }
+
+  #emailbox{
+    opacity: 0.4;
+    height: 80px;
+  }
+  #passwordfont{
+    font-style:oblique;
+    font-size:30px;
+    line-height: 10px;
+    text-shadow: black 0.1em 0.1em 0.2em;
+  }
+  #passwordbox{
+    opacity: 0.4;
+    height: 80px;
+  }
+</style>
