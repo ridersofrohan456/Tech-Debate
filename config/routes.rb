@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 
   get 'users/show'
 
+
+  get 'static_pages/live_debate'
+
   devise_for :users
 
   resources :users, :debates, :comments

@@ -1,6 +1,6 @@
 namespace :db do
   desc "Populate debates"
-  task populate_debates: :environment do
+  task populate: :environment do
     [User, Debate].map(&:destroy_all)
 
     User.create!(
@@ -31,7 +31,6 @@ namespace :db do
         password: "user1234",
         debates:  Debate.all
       )
-
 
     end
    puts "users and debates populated"
