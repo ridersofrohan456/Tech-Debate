@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004220102) do
+ActiveRecord::Schema.define(version: 20141007033648) do
 
   create_table "comments", force: true do |t|
     t.string   "authored_by"
@@ -23,17 +23,17 @@ ActiveRecord::Schema.define(version: 20141004220102) do
     t.integer  "side"
   end
 
-  create_table "debates", force: true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "winner"
+  create_table "debatement", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "debate_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "debates_users", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "debate_id"
+  create_table "debates", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "winner"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
