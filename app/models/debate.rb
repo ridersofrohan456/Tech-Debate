@@ -1,6 +1,6 @@
 class Debate < ActiveRecord::Base
-  has_many :debatesUsers
-  has_many :users, through: :debatesUsers, source: :debatesUsers
+  has_many :debatements
+  has_many :users, through: :debatements
 
-  has_many :commentsra
+  has_many :comments
 end

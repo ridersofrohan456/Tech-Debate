@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :debatesUsers
-  has_many :debates, through: :debatesUsers, source: :debatesUsers
+  has_many :debatements
+  has_many :debates, through: :debatements
 
 
   # Include default devise modules. Others available are:
